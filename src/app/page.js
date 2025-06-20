@@ -97,40 +97,31 @@ export default function Portfolio() {
         <section className="mb-16 max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold mb-4">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "LSB Steganography",
-                tech: "C",
-                desc: "Embed secret data in images using LSB.",
-                details: "Developed a secure data hiding method using Least Significant Bit encoding in C. Ensured no loss of image fidelity. Focused on reversible encoding/decoding logic.",
-                github: "https://github.com/yourusername/lsb-steganography",
-                image: "/images/steganography.png"
-              },
-              {
-                title: "Address Book",
-                tech: "C, File I/O",
-                desc: "Store and manage contact info.",
-                details: "Built a CLI address book in C with structures and file I/O for persistent contact management. Included features to add, search, delete, and update entries.",
-                github: "https://github.com/yourusername/address-book",
-                image: "/images/addressbook.png"
-              },
-              {
-                title: "Car Black Box",
-                tech: "Embedded C, PIC18F4580",
-                desc: "Monitor and log car events.",
-                details: "Designed an event logger for cars using sensors and microcontrollers to record speed violations, impact, and driver behavior. Ideal for fleet tracking.",
-                github: "https://github.com/yourusername/car-black-box",
-                image: "/images/carblackbox.png"
-              },
-              {
-                title: "Gas Cut-off System",
-                tech: "C, Arduino",
-                desc: "Detect gas leaks and shut valve.",
-                details: "Used gas sensors and Arduino to shut off LPG gas in case of leaks. Enhanced kitchen safety with auto shut-off relay control.",
-                github: "https://github.com/yourusername/gas-safety",
-                image: "/images/gascutoff.png"
-              }
-            ].map((project, i) => (
+            {[{
+              title: "LSB Steganography",
+              tech: "C",
+              desc: "Embed secret data in images using LSB.",
+              details: "Developed a secure data hiding method using Least Significant Bit encoding in C. Ensured no loss of image fidelity. Focused on reversible encoding/decoding logic.",
+              github: "https://github.com/yourusername/lsb-steganography"
+            }, {
+              title: "Address Book",
+              tech: "C, File I/O",
+              desc: "Store and manage contact info.",
+              details: "Built a CLI address book in C with structures and file I/O for persistent contact management. Included features to add, search, delete, and update entries.",
+              github: "https://github.com/yourusername/address-book"
+            }, {
+              title: "Car Black Box",
+              tech: "Embedded C, PIC18F4580",
+              desc: "Monitor and log car events.",
+              details: "Designed an event logger for cars using sensors and microcontrollers to record speed violations, impact, and driver behavior. Ideal for fleet tracking.",
+              github: "https://github.com/yourusername/car-black-box"
+            }, {
+              title: "Gas Cut-off System",
+              tech: "C, Arduino",
+              desc: "Detect gas leaks and shut valve.",
+              details: "Used gas sensors and Arduino to shut off LPG gas in case of leaks. Enhanced kitchen safety with auto shut-off relay control.",
+              github: "https://github.com/yourusername/gas-safety"
+            }].map((project, i) => (
               <Dialog key={i}>
                 <DialogTrigger asChild>
                   <Card className="bg-gray-100 dark:bg-gray-800 hover:scale-105 transition-transform cursor-pointer">
@@ -144,13 +135,6 @@ export default function Portfolio() {
                 <DialogContent className="bg-gray-900 text-white">
                   <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-sm text-gray-400 mb-2">Tech Stack: {project.tech}</p>
-                  {project.image && (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover rounded-lg mb-4 transition duration-300 hover:scale-105"
-                    />
-                  )}
                   <p className="text-gray-200 text-sm mb-4">{project.details}</p>
                   {project.github && (
                     <a
@@ -202,3 +186,4 @@ export default function Portfolio() {
     </div>
   );
 }
+
