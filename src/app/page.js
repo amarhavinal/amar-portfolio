@@ -85,7 +85,7 @@ export default function Portfolio() {
               <ul className="list-disc ml-4">
                 <li>Linux Internals</li>
                 <li>Microcontroller Programming</li>
-                <li>UART, SPI, I2C</li>
+                <li>UART, SPI, I2C, CAN</li>
                 <li>Timers, ADC, DAC, PWM</li>
                 <li>Debugging, RT Monitoring</li>
               </ul>
@@ -109,6 +109,12 @@ export default function Portfolio() {
               desc: "Store and manage contact info.",
               details: "Built a CLI address book in C with structures and file I/O for persistent contact management. Included features to add, search, delete, and update entries.",
               github: "https://github.com/yourusername/address-book"
+            }, {
+              title: "Mini Shell",
+              tech: "C, Linux System Calls, Signals",
+              desc: "A command-line shell mimicking Bash behavior.",
+              details: "Developed a mini shell in C using Linux system calls and signal handling. Supports command execution, piping, and custom signal handling (e.g., Ctrl+C). This project provided real-time experience in Linux Internals and CLI design.",
+              github: "https://github.com/yourusername/mini-shell"
             }, {
               title: "Car Black Box",
               tech: "Embedded C, PIC18F4580",
@@ -186,4 +192,3 @@ export default function Portfolio() {
     </div>
   );
 }
-
