@@ -10,6 +10,49 @@ import { Github, Linkedin, Mail, Sun, Moon } from "lucide-react";
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(true);
 
+  const projects = [
+    {
+      title: "LSB Steganography",
+      tech: "C",
+      desc: "Embed secret data in images using LSB.",
+      details:
+        "Developed a secure data hiding method using Least Significant Bit encoding in C. Ensured no loss of image fidelity. Focused on reversible encoding/decoding logic.",
+      github: "https://github.com/amarhavinal/LSB-Image-Steganography",
+    },
+    {
+      title: "Address Book",
+      tech: "C, File I/O",
+      desc: "Store and manage contact info.",
+      details:
+        "Built a CLI address book in C with structures and file I/O for persistent contact management. Included features to add, search, delete, and update entries.",
+      github: "https://github.com/amarhavinal/Addressbook",
+    },
+    {
+      title: "Mini Shell",
+      tech: "C, Linux System Calls, Signals",
+      desc: "A command-line shell mimicking Bash behavior.",
+      details:
+        "Developed a mini shell in C using Linux system calls and signal handling. Supports command execution, piping, and custom signal handling (e.g., Ctrl+C). This project provided real-time experience in Linux Internals and CLI design.",
+      github: "https://github.com/amarhavinal/mini-shell",
+    },
+    {
+      title: "Car Black Box",
+      tech: "Embedded C, PIC18F4580",
+      desc: "Monitor and log car events.",
+      details:
+        "Designed an event logger for cars using sensors and microcontrollers to record speed violations, impact, and driver behavior. Ideal for fleet tracking.",
+      github: "https://github.com/amarhavinal/car-black-box",
+    },
+    {
+      title: "Gas Cut-off System",
+      tech: "C, Arduino",
+      desc: "Detect gas leaks and shut valve.",
+      details:
+        "Used gas sensors and Arduino to shut off LPG gas in case of leaks. Enhanced kitchen safety with auto shut-off relay control.",
+      github: "https://github.com/amarhavinal/gas-safety",
+    },
+  ];
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <main className="min-h-screen bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-800 text-black dark:text-white px-6 py-12 transition-colors duration-300">
@@ -25,7 +68,9 @@ export default function Portfolio() {
         {/* Header */}
         <section className="text-center space-y-4 mb-16">
           <h1 className="text-5xl font-bold">Amar Havinal</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400">Electronics and Communication Graduate</p>
+          <p className="text-xl text-gray-600 dark:text-gray-400">
+            Electronics and Communication Graduate
+          </p>
           <p className="text-base max-w-2xl mx-auto">
             Engineering graduate seeking an entry-level role in embedded systems to apply
             skills in C, C++, microcontroller programming, DSA and Linux, with a passion
@@ -40,10 +85,10 @@ export default function Portfolio() {
             I am Amar Havinal, an Electronics and Communication Engineering graduate with a
             CGPA of 7.5 and hands-on training at Emertxe in embedded systems. My technical
             interests lie in advanced C programming, microcontroller interfacing, Linux
-            internals, and embedded communication protocols like UART, SPI, and I2C. I’ve
-            built practical projects such as an LSB Steganography system, Car Black Box,
-            and an Automatic Gas Cut-off system, showcasing real-time embedded development
-            skills. My career objective is to secure an entry-level role where I can
+            internals, and embedded communication protocols like UART, SPI, I2C, and CAN.
+            I’ve built practical projects such as an LSB Steganography system, Car Black
+            Box, and an Automatic Gas Cut-off system, showcasing real-time embedded
+            development skills. My career objective is to secure an entry-level role where I can
             contribute to innovative embedded solutions and grow professionally. I stand
             out through my project-driven learning, strong grasp of low-level programming,
             and eagerness for continuous improvement. Winning a circuit debugging
@@ -97,44 +142,20 @@ export default function Portfolio() {
         <section className="mb-16 max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold mb-4">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[{
-              title: "LSB Steganography",
-              tech: "C",
-              desc: "Embed secret data in images using LSB.",
-              details: "Developed a secure data hiding method using Least Significant Bit encoding in C. Ensured no loss of image fidelity. Focused on reversible encoding/decoding logic.",
-              github: "https://github.com/yourusername/lsb-steganography"
-            }, {
-              title: "Address Book",
-              tech: "C, File I/O",
-              desc: "Store and manage contact info.",
-              details: "Built a CLI address book in C with structures and file I/O for persistent contact management. Included features to add, search, delete, and update entries.",
-              github: "https://github.com/yourusername/address-book"
-            }, {
-              title: "Mini Shell",
-              tech: "C, Linux System Calls, Signals",
-              desc: "A command-line shell mimicking Bash behavior.",
-              details: "Developed a mini shell in C using Linux system calls and signal handling. Supports command execution, piping, and custom signal handling (e.g., Ctrl+C). This project provided real-time experience in Linux Internals and CLI design.",
-              github: "https://github.com/yourusername/mini-shell"
-            }, {
-              title: "Car Black Box",
-              tech: "Embedded C, PIC18F4580",
-              desc: "Monitor and log car events.",
-              details: "Designed an event logger for cars using sensors and microcontrollers to record speed violations, impact, and driver behavior. Ideal for fleet tracking.",
-              github: "https://github.com/yourusername/car-black-box"
-            }, {
-              title: "Gas Cut-off System",
-              tech: "C, Arduino",
-              desc: "Detect gas leaks and shut valve.",
-              details: "Used gas sensors and Arduino to shut off LPG gas in case of leaks. Enhanced kitchen safety with auto shut-off relay control.",
-              github: "https://github.com/yourusername/gas-safety"
-            }].map((project, i) => (
+            {projects.map((project, i) => (
               <Dialog key={i}>
                 <DialogTrigger asChild>
                   <Card className="bg-gray-100 dark:bg-gray-800 hover:scale-105 transition-transform cursor-pointer">
                     <CardContent className="p-4 space-y-2">
-                      <h3 className="text-xl font-bold text-black dark:text-white">{project.title}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Tech Stack: {project.tech}</p>
-                      <p className="text-gray-700 dark:text-gray-300 text-sm">{project.desc}</p>
+                      <h3 className="text-xl font-bold text-black dark:text-white">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Tech Stack: {project.tech}
+                      </p>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm">
+                        {project.desc}
+                      </p>
                     </CardContent>
                   </Card>
                 </DialogTrigger>
@@ -163,7 +184,18 @@ export default function Portfolio() {
           <h2 className="text-3xl font-semibold mb-4">Certifications</h2>
           <ul className="list-disc ml-6 text-gray-800 dark:text-gray-300">
             <li>
-              <span className="font-medium text-black dark:text-white">Emertxe Certified Embedded Professional (ECEP)</span> – Emertxe Information Technologies, May 2025. [<a href="https://certificate.emertxe.com/?id=24018_023" target="_blank" className="underline text-blue-400">Certificate</a>]
+              <span className="font-medium text-black dark:text-white">
+                Emertxe Certified Embedded Professional (ECEP)
+              </span>{" "}
+              – Emertxe Information Technologies, May 2025. [
+              <a
+                href="https://certificate.emertxe.com/?id=24018_023"
+                target="_blank"
+                className="underline text-blue-400"
+              >
+                Certificate
+              </a>
+              ]
             </li>
           </ul>
         </section>
@@ -171,11 +203,26 @@ export default function Portfolio() {
         {/* Contact */}
         <section className="text-center space-y-4">
           <h2 className="text-3xl font-semibold">Contact</h2>
-          <p>Email: <a href="mailto:amarhavinal@gmail.com" className="underline text-blue-400">amarhavinal@gmail.com</a></p>
+          <p>
+            Email:{" "}
+            <a
+              href="mailto:amarhavinal@gmail.com"
+              className="underline text-blue-400"
+            >
+              amarhavinal@gmail.com
+            </a>
+          </p>
           <p>Phone: 8660737256</p>
           <div className="flex justify-center gap-6 text-gray-800 dark:text-gray-300 mt-2">
-            <a href="https://www.linkedin.com/in/amar-havinal-71564535b" target="_blank"><Linkedin className="w-6 h-6" /></a>
-            <a href="mailto:amarhavinal@gmail.com"><Mail className="w-6 h-6" /></a>
+            <a
+              href="https://www.linkedin.com/in/amar-havinal-71564535b"
+              target="_blank"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a href="mailto:amarhavinal@gmail.com">
+              <Mail className="w-6 h-6" />
+            </a>
           </div>
           <div className="mt-4">
             <Button asChild>
